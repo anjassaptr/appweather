@@ -8,12 +8,12 @@ const descriptionDisplay = document.getElementById('description');
 const iconDisplay = document.getElementById('icon');
 
 // API Key OpenWeather (ganti dengan API key Anda)
-const API_KEY = 'fc6dce9d8d2fa1176db492b1862d175a';
+const API_KEY = '649af205cac94d929b4e2eaf5a900873';
 
 // Fungsi untuk mengambil data cuaca
 async function getWeather(city) {
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
 
     if (!response.ok) {
       throw new Error('Kota tidak ditemukan!');
